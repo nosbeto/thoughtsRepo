@@ -1,0 +1,23 @@
+{
+  "name": "thoughtsrepo",
+  "version": "1.0.0",
+  "description": "thoughtsRepo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nosbeto/thoughtsRepo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nosbeto/thoughtsRepo/issues"
+  },
+  "homepage": "https://github.com/nosbeto/thoughtsRepo#readme",
+  "dependencies": {
+    "mongoose": "^6.10.0",
+    "nodemon": "^2.0.20"
+  }
+}
