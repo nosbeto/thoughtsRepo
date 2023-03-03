@@ -73,7 +73,7 @@ module.exports = {
       .then((user) =>
         !user
           ? res.status(404).json({ message: "No such user exists" })
-          : Thought.deleteMany(_id: {$in: User.Thought})
+          : Thought.deleteMany({_id: {$in: user.thoughts}})
       )
       .then((user) =>
         !user
@@ -86,7 +86,7 @@ module.exports = {
         console.log(err);
         res.status(500).json(err);
       });
-  },
+    },
   //Add a friend
   addFriend({params},res) {
   User.findOneAndUpdate(
