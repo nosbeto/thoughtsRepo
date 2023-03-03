@@ -3,35 +3,35 @@ const { ObjectId } = require("mongoose").Types;
 const { User, Thought } = require("../models");
 
 // TODO: Create an aggregate function to get the number of users overall
-const headCount = async () =>
+const headCount = async () => {
   User.aggregate()
     // Your code here
-    .then((numberOfUsers) => numberOfUsers);
+    .then((numberOfUsers) => numberOfUsers)}
 
 module.exports = {
   // GET all Users
-  getUsers(req, res) {
-    User.find()
-      .then(async (users) => {
-        const userObj = {
-          users,
-          headCount: await headCount(),
-        };
-        return res.json(userObj);
-      })
-      .catch((err) => {
-        console.log(err);
-        return res.status(500).json(err);
-      });
-  },
+  // getUsers(req, res) {
+  //   User.find()
+  //     .then(async (users) => {
+  //       const userObj = {
+  //         users,
+  //         headCount: await headCount(),
+  //       };
+  //       return res.json(userObj);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       return res.status(500).json(err);
+  //     });
+  // },
 
 // module.exports = {
-//   //GET all users
-//   getUsers(req,res) {
-//     User.find()
-//       .then((users) => res.json(users))
-//       .catch((err) => res.status(500).json(err));
-//   },
+  //GET all users
+  getUsers(req,res) {
+    User.find()
+      .then((users) => res.json(users))
+      .catch((err) => res.status(500).json(err));
+  },
 
   // Get a single user
   getSingleUser(req, res) {
