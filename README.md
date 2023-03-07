@@ -3,10 +3,6 @@
 ## Description
 This is an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.
 
-![Screenshot](./assets/images/screenshot1.png)
-
-<!-- [demo.webm](https://user-images.githubusercontent.com/114036566/212731034-3ca651f3-4fd5-4e11-9f39-1536b97a779e.webm) -->
-
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
@@ -60,8 +56,8 @@ For each user, the following requests are available to you:
 | `DELETE` | /api/user/***`<userId>`***  | Sends a DELETE request to remove a specific entry in the <code>user</code> collection|
 | `DELETE` | /api/user/***`<userId>`***/friends/***`<userId>`***| Sends a DELETE request to remove a specific entry in the <code>user</code> collection. It removes a friend for a specific user |
 
-https://drive.google.com/file/d/1GL_SgT_bUGHPL1gsx-wZyXjHqouqC6Z7/view
-https://drive.google.com/file/d/19dpUkIYrNwUBhoBAr2_mFxm4Sja9mSrf/view
+[User Routes.webm](https://user-images.githubusercontent.com/114036566/223317737-90301345-e575-4514-bad1-1fd07a1ddb2b.webm)
+
 
 ### Thought Routes
 | Request | Endpoint | Description | 
@@ -72,6 +68,11 @@ https://drive.google.com/file/d/19dpUkIYrNwUBhoBAr2_mFxm4Sja9mSrf/view
 | `PUT` | /api/thoughts/***`<thoughtId>`*** | Sends a PUT request to update a specific entry in the <code>thoughts</code> collection |
 | `POST` | /api/thoughts/***`<thoughtId>`***/reactions | Sends a POST request to create a new reaction entry for a specific <code>thought</code>. It needs the username of who is creating the reaction in the body|
 | `DELETE` | /api/thoughts/***`<thoughtId>`***| Sends a DELETE request to remove a specific entry in the <code>thoughts</code> collection |
+
+[Thought Routes.webm](https://user-images.githubusercontent.com/114036566/223317777-5dc1b715-dee8-4298-938d-61b26efb86f9.webm)
+
+https://drive.google.com/file/d/1GL_SgT_bUGHPL1gsx-wZyXjHqouqC6Z7/view
+https://drive.google.com/file/d/19dpUkIYrNwUBhoBAr2_mFxm4Sja9mSrf/view
 
 ## Credits
 * Me
