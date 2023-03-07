@@ -33,7 +33,7 @@ module.exports = {
     Thought.create(req.body)
       .then((thought) => {
         return User.findOneAndUpdate(
-          { _id: req.body.userId },
+          { username: req.body.username },
           { $addToSet: { thoughts: thought._id } },
           { new: true }
         );
@@ -54,7 +54,7 @@ module.exports = {
   //PUT to update a thought by its _id
   updateThought(req, res) {
     Thought.findOneAndUpdate(
-      { _id: req.params.thoughtId },
+      { _id: req.params.thoughtsId },
       { $set: req.body },
       { runValidators: true, new: true }
     )
@@ -73,7 +73,7 @@ module.exports = {
 
   //DELETE to remove a thought by its _id
   deleteThought(req, res) {
-    Thought.findOneAndDelete({ _id: req.params.thoughtId })
+    Thought.findOneAndDelete({ _id: req.params.thoughtsId })
       .then((thought) =>
         !Thought
           ? res
@@ -90,12 +90,12 @@ module.exports = {
   //POST to create a reaction stored in a single thought's reactions array field
   createReaction(req, res) {
     Thought.findOneAndUpdate(
-      { _id: req.params.thoughtId },
+      { _id: req.params.thoughtsId },
       { $addToSet: { reactions: req.body } },
       { runValidators: true, new: true }
     )
       .then(async (thought) =>
-        !Thought
+        !thought
           ? res
               .status(404)
               .json({
@@ -112,14 +112,14 @@ module.exports = {
   //DELETE to pull and remove a reaction by the reaction's reactionId value
   deleteReaction({ params }, res) {
     Thought.findOneAndUpdate(
-      { _id: params.thoughtId },
+      { _id: params.thoughtsId },
       { $pull: { reactions: params.reactionId } },
       { new: true }
     )
       .select("-__v")
       .populate("reactions")
       .then((thought) =>
-        !Thought
+        !thought
           ? res
               .status(404)
               .json({
